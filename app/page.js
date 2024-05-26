@@ -5,7 +5,6 @@ import { EmulatorJS } from 'react-emulatorjs';
 export default function Home() {
   const emulatorArray= ["Gameboy", "Gameboy Adv", "Nintendo DS"]
   const emulatorMap= {
-
     "Gameboy": "gb",
     "Gameboy Adv": "gba",
     "Nintendo DS": "nds"
@@ -15,14 +14,37 @@ export default function Home() {
   const gameRef = useRef(null)
   const [rom, setRom] = useState("")
   const [activeEmulator, setActiveEmulator] = useState(emulatorArray[0])
+  const [fileError, setFileError] = useState(null)
+
+  const verifyRomFileType = (file) => {
+
+      if (file) {
+
+        const extension= file.name.split('.').pop()
+
+        if (extension !== emulatorMap[activeEmulator]) {
+          setFileError("invalid file type")
+          return false
+        }
+        
+        setFileError(null)
+        return true
+      }
+
+
+  }
 
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0]
 
     if (file) {
-      const newURL = URL.createObjectURL(file);
-      setRom(newURL)
+
+      if (verifyRomFileType(file)) {
+        setFileError(null)
+        const newURL = URL.createObjectURL(file);
+        setRom(newURL)
+    }
     }
   }
 
@@ -36,7 +58,6 @@ export default function Home() {
     const current= emulatorArray.indexOf(activeEmulator)
     const next= (current + 1) % emulatorArray.length
     setActiveEmulator(emulatorArray[next])
-
   }
 
   const handleEmulatorChangeLeft = (e) => {
@@ -66,9 +87,9 @@ export default function Home() {
         <div className="flex justify-center">
           {rom && <EmulatorJS className="justify-center" EJS_core={emulatorMap[activeEmulator]} EJS_gameUrl={rom} />}
         </div>
+        {fileError && <span className="text-sm text-red-600 font-light">{fileError}</span>}
         <div className="flex flex-row justify-center mt-5 p-3">
           <input className="hidden" type="file" ref={gameRef} onChange={handleFileUpload} />
-
           <button className="bg-slate-600 border border-pink-400 rounded-md justify-center align-center" onClick={handleButtonClick}>
             Load Rom
           </button>
