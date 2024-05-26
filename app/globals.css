@@ -42,7 +42,7 @@ main {
   }
   .text-neon-pink {
     @apply text-pink-600;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    text-shadow: 0 0 2px #ff00ff, 0 0 6px #ff00ff, 0 0 10px #ff00ff;
   }
   .bg-neon {
     @apply bg-gray-900;
