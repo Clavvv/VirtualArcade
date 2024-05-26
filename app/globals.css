@@ -46,7 +46,6 @@ main {
   }
   .bg-neon {
     @apply bg-gray-900;
-    background-image: url("images/backgroud.jpg");
   }
   .shadow-neon {
     @apply shadow-lg;
