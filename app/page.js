@@ -3,7 +3,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { EmulatorJS } from 'react-emulatorjs';
 
 export default function Home() {
-  const emulatorArray= ["Gameboy", "Gameboy Adv" ,"NES", "Playstation 1"]
+  const emulatorArray= ["Gameboy", "Gameboy Adv", "Nintendo DS"]
+  const emulatorMap= {
+
+    "Gameboy": "gb",
+    "Gameboy Adv": "gba",
+    "Nintendo DS": "nds"
+  }
+
+
   const gameRef = useRef(null)
   const [rom, setRom] = useState("")
   const [activeEmulator, setActiveEmulator] = useState(emulatorArray[0])
@@ -47,7 +55,7 @@ export default function Home() {
           {/*need to replace these with actual arrow SVG values or something.*/}
           {"<"}
         </button>
-        <span className=" text-pink-300/80 text-4xl font-bold min-w-230px">
+        <span className="text-center text-pink-300/80 text-4xl font-bold min-w-[250px]">
           {activeEmulator}
         </span>
         <button className="text-pink-300/80 text-4xl font-bold mx-5 px-2 hover:bg-slate-50 hover:rounded-sm" onClick= {handleEmulatorChangeRight}>
@@ -56,7 +64,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col h-full w-full">
         <div className="flex justify-center">
-          {rom && <EmulatorJS className="justify-center" EJS_core="gb" EJS_gameUrl={rom} />}
+          {rom && <EmulatorJS className="justify-center" EJS_core={emulatorMap[activeEmulator]} EJS_gameUrl={rom} />}
         </div>
         <div className="flex flex-row justify-center mt-5 p-3">
           <input className="hidden" type="file" ref={gameRef} onChange={handleFileUpload} />
