@@ -55,4 +55,45 @@ main {
     @apply text-green-400;
     text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99;
   }
+  .controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .controller-buttons-left, .controller-buttons-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .controller-buttons-left .flex, .controller-buttons-right .flex {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .controller-button {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+  }
+  
+  .controller-button-active {
+    background-color: #0f0; /* Change to green when active */
+  }
 }
