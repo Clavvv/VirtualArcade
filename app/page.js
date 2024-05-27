@@ -70,15 +70,15 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neon">
-      <div className="flex items-center mb-10 min-w-480">
+    <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon">
+      <div className="flex flex-row items-center">
         <button
           className="cyber-button mx-5 active:bg-slate-600"
           onClick={handleEmulatorChangeLeft}
         >
           &lt;
         </button>
-        <span className="min-w-[345px] text-center text-neon-pink text-4xl font-bold">
+        <span className="text-center text-neon-pink text-4xl font-bold min-w-[250px]">
           {activeEmulator}
         </span>
         <button
@@ -88,7 +88,8 @@ export default function Home() {
           &gt;
         </button>
       </div>
-      <div className="flex flex-col h-full w-full items-center">
+
+      <div className="flex flex-col h-full w-full items-center mt-20">
         <div className="relative w-full xl:max-w-4xl mb-10">
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
@@ -110,6 +111,7 @@ export default function Home() {
         {fileError && (
           <span className="text-sm text-red-600 font-light">{fileError}</span>
         )}
+
         <div className="flex flex-row justify-center mt-5 p-3">
           <input
             className="hidden"
@@ -121,6 +123,7 @@ export default function Home() {
             Load ROM
           </button>
         </div>
+
         <div className="controller flex justify-between w-full mt-10">
           <div className="controller-buttons-left flex flex-col items-center">
             <div
@@ -161,7 +164,7 @@ export default function Home() {
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
+                className={`controller-button ${activeKeys['az'] ? 'controller-button-active' : ''
                   }`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
@@ -197,6 +200,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+
         <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
           <table>
             <thead>
