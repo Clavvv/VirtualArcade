@@ -70,10 +70,10 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neon">
+    <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon">
       <div className="flex flex-row items-center">
         <button 
-          className="cyber-button mx-5" 
+          className="cyber-button mx-5 active:bg-slate-600" 
           onClick={handleEmulatorChangeLeft}
         >
           &lt;
@@ -82,14 +82,14 @@ export default function Home() {
           {activeEmulator}
         </span>
         <button 
-          className="cyber-button mx-5" 
+          className="cyber-button mx-5 active:bg-slate-600" 
           onClick={handleEmulatorChangeRight}
         >
           &gt;
         </button>
       </div>
       <div className="flex flex-col h-full w-full items-center">
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-10">
           {rom && (
             <EmulatorJS
               className="justify-center"
@@ -108,8 +108,8 @@ export default function Home() {
             ref={gameRef}
             onChange={handleFileUpload}
           />
-          <button className="cyber-button" onClick={handleButtonClick}>
-            Load Rom
+          <button className="cyber-button active:bg-slate-600" onClick={handleButtonClick}>
+            Load ROM
           </button>
         </div>
         <div className="controller flex justify-between w-full mt-10">
@@ -157,19 +157,19 @@ export default function Home() {
             <div className="flex">
               <div
                 className={`controller-button ${
-                  activeKeys['x'] ? 'controller-button-active' : ''
+                  activeKeys['az'] ? 'controller-button-active' : ''
                 }`}
-                onMouseDown={() => handleButtonPress('x')}
-                onMouseUp={() => handleButtonRelease('x')}
+                onMouseDown={() => handleButtonPress('a')}
+                onMouseUp={() => handleButtonRelease('a')}
               >
                 X
               </div>
               <div
                 className={`controller-button ${
-                  activeKeys['y'] ? 'controller-button-active' : ''
+                  activeKeys['s'] ? 'controller-button-active' : ''
                 }`}
-                onMouseDown={() => handleButtonPress('y')}
-                onMouseUp={() => handleButtonRelease('y')}
+                onMouseDown={() => handleButtonPress('s')}
+                onMouseUp={() => handleButtonRelease('s')}
               >
                 Y
               </div>
@@ -177,19 +177,19 @@ export default function Home() {
             <div className="flex">
               <div
                 className={`controller-button ${
-                  activeKeys['b'] ? 'controller-button-active' : ''
+                  activeKeys['z'] ? 'controller-button-active' : ''
                 }`}
-                onMouseDown={() => handleButtonPress('b')}
-                onMouseUp={() => handleButtonRelease('b')}
+                onMouseDown={() => handleButtonPress('z')}
+                onMouseUp={() => handleButtonRelease('z')}
               >
                 B
               </div>
               <div
                 className={`controller-button ${
-                  activeKeys['a'] ? 'controller-button-active' : ''
+                  activeKeys['x'] ? 'controller-button-active' : ''
                 }`}
-                onMouseDown={() => handleButtonPress('a')}
-                onMouseUp={() => handleButtonRelease('a')}
+                onMouseDown={() => handleButtonPress('x')}
+                onMouseUp={() => handleButtonRelease('x')}
               >
                 A
               </div>
