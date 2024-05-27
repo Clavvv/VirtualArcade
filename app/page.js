@@ -164,12 +164,8 @@ export default function Home() {
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-<<<<<<< HEAD
                 className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
                   }`}
-=======
-                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''}`}
->>>>>>> ac846b5c6de9c4df25c6c45bea748c2c3077645d
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
               >
@@ -202,7 +198,6 @@ export default function Home() {
           </div>
         </div>
 
-<<<<<<< HEAD
         <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
           <table>
             <thead>
@@ -255,8 +250,6 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-=======
->>>>>>> ac846b5c6de9c4df25c6c45bea748c2c3077645d
       </div>
     </main >
   );
