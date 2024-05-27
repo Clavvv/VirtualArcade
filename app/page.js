@@ -122,6 +122,9 @@ export default function Home() {
           <button className="cyber-button active:bg-slate-600" onClick={handleButtonClick}>
             Load ROM
           </button>
+          <div className="instructions absolute inset-x-50 bottom-5 bg-zinc-900/[0.5] p-4 m-20 rounded-md border-2 border-[#00ff99] ">
+            This emulator supports .gb, .gba, and .nds ROM files. Please use the selector at the top of the page to choose your preferred emulator. Enjoy!
+          </div>
         </div>
 
         <div className="controller flex justify-between w-full mt-10">
@@ -164,7 +167,7 @@ export default function Home() {
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['az'] ? 'controller-button-active' : ''
+                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
                   }`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
@@ -241,6 +244,14 @@ export default function Home() {
               <tr>
                 <td className="px-5">X button</td>
                 <td className="px-5">A</td>
+              </tr>
+              <tr>
+                <td className="px-5">Start</td>
+                <td className="px-5">Enter</td>
+              </tr>
+              <tr>
+                <td className="px-5">Select</td>
+                <td className="px-5">V</td>
               </tr>
             </tbody>
           </table>
