@@ -72,8 +72,8 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neon">
       <div className="flex flex-row items-center">
-        <button 
-          className="cyber-button mx-5 active:bg-slate-600" 
+        <button
+          className="cyber-button mx-5 active:bg-slate-600"
           onClick={handleEmulatorChangeLeft}
         >
           &lt;
@@ -81,23 +81,33 @@ export default function Home() {
         <span className="text-center text-neon-pink text-4xl font-bold min-w-[250px]">
           {activeEmulator}
         </span>
-        <button 
-          className="cyber-button mx-5 active:bg-slate-600" 
+        <button
+          className="cyber-button mx-5 active:bg-slate-600"
           onClick={handleEmulatorChangeRight}
         >
           &gt;
         </button>
       </div>
       <div className="flex flex-col h-full w-full items-center">
-        <div className="flex justify-center mt-10">
-          {rom && (
-            <EmulatorJS
-              className="justify-center"
-              EJS_core={emulatorMap[activeEmulator]}
-              EJS_gameUrl={rom}
-            />
-          )}
+
+        <div className="relative w-full xl:max-w-4xl mb-10">
+          <div className="relative w-full h-full">
+            <img src="/images/tv.png" className="block w-full h-auto" />
+            <div className="absolute inset-8	w-10/12" style={{ left: '6%', top: '10%' }}>
+              <img src="/images/animated-tv-static.gif" className="object-fill h-auto w-5/6 z-0" />
+            </div>
+          </div>
+
+          <div className="absolute inset-0 flex justify-center items-center z-10" style={{ left: '-18%' }}>
+            {rom && (
+              <EmulatorJS
+                EJS_core={emulatorMap[activeEmulator]}
+                EJS_gameUrl={rom}
+              />
+            )}
+          </div>
         </div>
+
         {fileError && (
           <span className="text-sm text-red-600 font-light">{fileError}</span>
         )}
@@ -115,9 +125,8 @@ export default function Home() {
         <div className="controller flex justify-between w-full mt-10">
           <div className="controller-buttons-left flex flex-col items-center">
             <div
-              className={`controller-button ${
-                activeKeys['ArrowUp'] ? 'controller-button-active' : ''
-              }`}
+              className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''
+                }`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
               onMouseUp={() => handleButtonRelease('ArrowUp')}
             >
@@ -125,27 +134,24 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${
-                  activeKeys['ArrowLeft'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['ArrowLeft'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('ArrowLeft')}
                 onMouseUp={() => handleButtonRelease('ArrowLeft')}
               >
                 ←
               </div>
               <div
-                className={`controller-button ${
-                  activeKeys['ArrowDown'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['ArrowDown'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('ArrowDown')}
                 onMouseUp={() => handleButtonRelease('ArrowDown')}
               >
                 ↓
               </div>
               <div
-                className={`controller-button ${
-                  activeKeys['ArrowRight'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['ArrowRight'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('ArrowRight')}
                 onMouseUp={() => handleButtonRelease('ArrowRight')}
               >
@@ -156,18 +162,16 @@ export default function Home() {
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-                className={`controller-button ${
-                  activeKeys['a'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
               >
                 X
               </div>
               <div
-                className={`controller-button ${
-                  activeKeys['s'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['s'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('s')}
                 onMouseUp={() => handleButtonRelease('s')}
               >
@@ -176,18 +180,16 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${
-                  activeKeys['z'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['z'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('z')}
                 onMouseUp={() => handleButtonRelease('z')}
               >
                 A
               </div>
               <div
-                className={`controller-button ${
-                  activeKeys['x'] ? 'controller-button-active' : ''
-                }`}
+                className={`controller-button ${activeKeys['x'] ? 'controller-button-active' : ''
+                  }`}
                 onMouseDown={() => handleButtonPress('x')}
                 onMouseUp={() => handleButtonRelease('x')}
               >
@@ -197,47 +199,47 @@ export default function Home() {
           </div>
         </div>
         <table id="keymapping">
-                <caption>Button Mapping</caption>
-                <thead>
-                  <tr>
-                    <th>Emulator Key</th>
-                    <th>Keyboard Key</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Up Arrow</td>
-                    <td>&uarr;</td>
-                  </tr>
-                  <tr>
-                    <td>Left Arrow</td>
-                    <td>&larr;</td>
-                  </tr>
-                  <tr>
-                    <td>Right Arrow</td>
-                    <td>&rarr;</td>
-                  </tr>
-                  <tr>
-                    <td>Down Arrow</td>
-                    <td>&darr;</td>
-                  </tr>
-                  <tr>
-                    <td>A button</td>
-                    <td>Z</td>
-                  </tr>
-                  <tr>
-                    <td>B button</td>
-                    <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Y button</td>
-                    <td>S</td>
-                  </tr>
-                  <tr>
-                    <td>X button</td>
-                    <td>A</td>
-                  </tr>
-                </tbody>
+          <caption>Button Mapping</caption>
+          <thead>
+            <tr>
+              <th>Emulator Key</th>
+              <th>Keyboard Key</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Up Arrow</td>
+              <td>&uarr;</td>
+            </tr>
+            <tr>
+              <td>Left Arrow</td>
+              <td>&larr;</td>
+            </tr>
+            <tr>
+              <td>Right Arrow</td>
+              <td>&rarr;</td>
+            </tr>
+            <tr>
+              <td>Down Arrow</td>
+              <td>&darr;</td>
+            </tr>
+            <tr>
+              <td>A button</td>
+              <td>Z</td>
+            </tr>
+            <tr>
+              <td>B button</td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <td>Y button</td>
+              <td>S</td>
+            </tr>
+            <tr>
+              <td>X button</td>
+              <td>A</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </main>
