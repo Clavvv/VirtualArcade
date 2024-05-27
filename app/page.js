@@ -93,12 +93,12 @@ export default function Home() {
         <div className="relative w-full xl:max-w-4xl mb-10" style={{ minHeight: '400px' }}>
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
-            <div className="absolute inset-8 w-10/12" style={{ left: '6%', top: '10%' }}>
+            <div className="absolute w-10/12" style={{ left: '6%', top: '10%' }}>
               <img src="/images/animated-tv-static.gif" className="object-fill h-auto w-5/6 z-0" />
             </div>
           </div>
 
-          <div className="absolute inset-0 flex justify-center items-center z-10" style={{ left: '-18%' }}>
+          <div className="absolute flex justify-center items-center z-10" style={{ left: '-18%' }}>
             {rom && (
               <EmulatorJS
                 EJS_core={emulatorMap[activeEmulator]}
