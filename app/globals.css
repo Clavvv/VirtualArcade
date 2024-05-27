@@ -97,3 +97,9 @@ main {
     background-color: #0f0; /* Change to green when active */
   }
 }
+
+.keymappings table {
+  padding-left: 5px;
+  padding-right: 5px;
+
+}

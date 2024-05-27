@@ -198,46 +198,45 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <table id="keymapping">
-          <caption>Button Mapping</caption>
+        <table className="absolute top-0 left-0 m-10 space-y-10" id="keymapping">
           <thead>
             <tr>
-              <th>Emulator Key</th>
-              <th>Keyboard Key</th>
+              <th className="px-5">Emulator Key</th>
+              <th className="px-5">Keyboard Key</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="mt-5">
             <tr>
-              <td>Up Arrow</td>
-              <td>&uarr;</td>
+              <td className="px-5">Up Arrow</td>
+              <td className="px-5">&uarr;</td>
             </tr>
             <tr>
-              <td>Left Arrow</td>
-              <td>&larr;</td>
+              <td className="px-5">Left Arrow</td>
+              <td className="px-5">&larr;</td>
             </tr>
             <tr>
-              <td>Right Arrow</td>
-              <td>&rarr;</td>
+              <td className="px-5">Right Arrow</td>
+              <td className="px-5">&rarr;</td>
             </tr>
             <tr>
-              <td>Down Arrow</td>
-              <td>&darr;</td>
+              <td className="px-5">Down Arrow</td>
+              <td className="px-5">&darr;</td>
             </tr>
             <tr>
-              <td>A button</td>
-              <td>Z</td>
+              <td className="px-5">A button</td>
+              <td className="px-5">Z</td>
             </tr>
             <tr>
-              <td>B button</td>
-              <td>X</td>
+              <td className="px-5">B button</td>
+              <td className="px-5">X</td>
             </tr>
             <tr>
-              <td>Y button</td>
-              <td>S</td>
+              <td className="px-5">Y button</td>
+              <td className="px-5">S</td>
             </tr>
             <tr>
-              <td>X button</td>
-              <td>A</td>
+              <td className="px-5">X button</td>
+              <td className="px-5">A</td>
             </tr>
           </tbody>
         </table>
