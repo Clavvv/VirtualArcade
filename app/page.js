@@ -89,16 +89,16 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="flex flex-col h-full w-full items-center mt-20">
-        <div className="relative w-full xl:max-w-4xl mb-10">
+      <div className="flex flex-col h-full w-full items-center mt-20" style={{ minWidth: '900px', maxWidth: '900px' }}>
+        <div className="relative w-full xl:max-w-4xl mb-10" style={{ minHeight: '400px' }}>
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
-            <div className="absolute inset-8	w-10/12" style={{ left: '6%', top: '10%' }}>
+            <div className="absolute w-10/12" style={{ left: '6%', top: '10%' }}>
               <img src="/images/animated-tv-static.gif" className="object-fill h-auto w-5/6 z-0" />
             </div>
           </div>
 
-          <div className="absolute inset-0 flex justify-center items-center z-10" style={{ left: '-18%' }}>
+          <div className="absolute flex justify-center items-center z-10" style={{ left: '-18%' }}>
             {rom && (
               <EmulatorJS
                 EJS_core={emulatorMap[activeEmulator]}
@@ -127,11 +127,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="controller flex justify-between w-full mt-10">
-          <div className="controller-buttons-left flex flex-col items-center">
+        <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
+          <div className="controller-buttons-left flex flex-col items-center" >
             <div
-              className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''
-                }`}
+              className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''}`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
               onMouseUp={() => handleButtonRelease('ArrowUp')}
             >
@@ -139,24 +138,21 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['ArrowLeft'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowLeft'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowLeft')}
                 onMouseUp={() => handleButtonRelease('ArrowLeft')}
               >
                 ←
               </div>
               <div
-                className={`controller-button ${activeKeys['ArrowDown'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowDown'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowDown')}
                 onMouseUp={() => handleButtonRelease('ArrowDown')}
               >
                 ↓
               </div>
               <div
-                className={`controller-button ${activeKeys['ArrowRight'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowRight'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowRight')}
                 onMouseUp={() => handleButtonRelease('ArrowRight')}
               >
@@ -164,19 +160,23 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
+<<<<<<< HEAD
                 className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
                   }`}
+=======
+                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''}`}
+>>>>>>> ac846b5c6de9c4df25c6c45bea748c2c3077645d
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
               >
                 X
               </div>
               <div
-                className={`controller-button ${activeKeys['s'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['s'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('s')}
                 onMouseUp={() => handleButtonRelease('s')}
               >
@@ -185,25 +185,24 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['z'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['z'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('z')}
                 onMouseUp={() => handleButtonRelease('z')}
               >
-                A
+                B
               </div>
               <div
-                className={`controller-button ${activeKeys['x'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['x'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('x')}
                 onMouseUp={() => handleButtonRelease('x')}
               >
-                B
+                A
               </div>
             </div>
           </div>
         </div>
 
+<<<<<<< HEAD
         <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
           <table>
             <thead>
@@ -256,7 +255,9 @@ export default function Home() {
             </tbody>
           </table>
         </div>
+=======
+>>>>>>> ac846b5c6de9c4df25c6c45bea748c2c3077645d
       </div>
-    </main>
+    </main >
   );
 }
