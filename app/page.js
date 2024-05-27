@@ -98,7 +98,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute flex justify-center items-center z-10" style={{ left: '-18%' }}>
+          <div className="absolute flex justify-center items-center z-10" style={{ left: '5%', bottom: '9%' }}>
             {rom && (
               <EmulatorJS
                 EJS_core={emulatorMap[activeEmulator]}
