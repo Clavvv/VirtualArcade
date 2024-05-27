@@ -23,7 +23,7 @@ export default function Home() {
       setRom(newURL);
       setFileError("");
     } else {
-      setFileError("Failed to load ROM file.");
+      setFileError("Failed to load ROM file refresh the page and try again.");
     }
   };
 
@@ -71,14 +71,14 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neon">
-      <div className="flex flex-row items-center">
+      <div className="flex items-center mb-10 min-w-480">
         <button
           className="cyber-button mx-5 active:bg-slate-600"
           onClick={handleEmulatorChangeLeft}
         >
           &lt;
         </button>
-        <span className="text-center text-neon-pink text-4xl font-bold min-w-[250px]">
+        <span className="min-w-[345px] text-center text-neon-pink text-4xl font-bold">
           {activeEmulator}
         </span>
         <button
