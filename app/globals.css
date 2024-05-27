@@ -17,20 +17,15 @@
 }
 
 body {
+
+  main {
+    background-image: url("/images/background.jpg");
+  }
+
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-main {
-  background-image: url("/images/background.jpg");
+    transparent,
+    rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
@@ -64,42 +59,68 @@ main {
     top: 50%;
     transform: translateY(-50%);
   }
-  
-  .controller-buttons-left, .controller-buttons-right {
+
+  .controller-buttons-left,
+  .controller-buttons-right {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  
-  .controller-buttons-left .flex, .controller-buttons-right .flex {
+
+  .controller-buttons-left .flex,
+  .controller-buttons-right .flex {
     display: flex;
     flex-direction: row;
   }
-  
+
   .controller-button {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #333;
+    background-color: #444;
     color: #fff;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 4px #999;
   }
-  
+
   .controller-button-active {
-    background-color: #0f0; /* Change to green when active */
+    background-color: #888; 
+    transform: translateY(4px); 
+    box-shadow: 0 2px #666; 
   }
-}
 
-.keymappings table {
-  padding-left: 5px;
-  padding-right: 5px;
 
+
+  .keymappings {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff99;
+    text-shadow: 0 0 2px #00ff99, 0 0 2px #00ff99, 0 0 5px #00ff99;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #00ff99;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+  }
+
+  .keymappings th,
+  .keymappings td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .keymappings th {
+    border-bottom: 2px solid #00ff99;
+  }
+
+  .keymappings tr:hover {
+    background-color: rgba(245, 245, 245, 0.15);
+  }
 }

@@ -89,7 +89,6 @@ export default function Home() {
         </button>
       </div>
       <div className="flex flex-col h-full w-full items-center">
-
         <div className="relative w-full xl:max-w-4xl mb-10">
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
@@ -198,48 +197,50 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <table className="absolute top-0 left-0 m-10 space-y-10" id="keymapping">
-          <thead>
-            <tr>
-              <th className="px-5">Emulator Key</th>
-              <th className="px-5">Keyboard Key</th>
-            </tr>
-          </thead>
-          <tbody className="mt-5">
-            <tr>
-              <td className="px-5">Up Arrow</td>
-              <td className="px-5">&uarr;</td>
-            </tr>
-            <tr>
-              <td className="px-5">Left Arrow</td>
-              <td className="px-5">&larr;</td>
-            </tr>
-            <tr>
-              <td className="px-5">Right Arrow</td>
-              <td className="px-5">&rarr;</td>
-            </tr>
-            <tr>
-              <td className="px-5">Down Arrow</td>
-              <td className="px-5">&darr;</td>
-            </tr>
-            <tr>
-              <td className="px-5">A button</td>
-              <td className="px-5">Z</td>
-            </tr>
-            <tr>
-              <td className="px-5">B button</td>
-              <td className="px-5">X</td>
-            </tr>
-            <tr>
-              <td className="px-5">Y button</td>
-              <td className="px-5">S</td>
-            </tr>
-            <tr>
-              <td className="px-5">X button</td>
-              <td className="px-5">A</td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
+          <table>
+            <thead>
+              <tr>
+                <th className="px-5">Emulator Key</th>
+                <th className="px-5">Keyboard Key</th>
+              </tr>
+            </thead>
+            <tbody className="mt-5">
+              <tr>
+                <td className="px-5">Up Arrow</td>
+                <td className="px-5">&uarr;</td>
+              </tr>
+              <tr>
+                <td className="px-5">Left Arrow</td>
+                <td className="px-5">&larr;</td>
+              </tr>
+              <tr>
+                <td className="px-5">Right Arrow</td>
+                <td className="px-5">&rarr;</td>
+              </tr>
+              <tr>
+                <td className="px-5">Down Arrow</td>
+                <td className="px-5">&darr;</td>
+              </tr>
+              <tr>
+                <td className="px-5">A button</td>
+                <td className="px-5">Z</td>
+              </tr>
+              <tr>
+                <td className="px-5">B button</td>
+                <td className="px-5">X</td>
+              </tr>
+              <tr>
+                <td className="px-5">Y button</td>
+                <td className="px-5">S</td>
+              </tr>
+              <tr>
+                <td className="px-5">X button</td>
+                <td className="px-5">A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   );
