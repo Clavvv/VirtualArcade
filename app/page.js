@@ -70,7 +70,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-neon">
       <div className="flex flex-row items-center">
         <button 
           className="cyber-button mx-5 active:bg-slate-600" 
@@ -157,7 +157,7 @@ export default function Home() {
             <div className="flex">
               <div
                 className={`controller-button ${
-                  activeKeys['az'] ? 'controller-button-active' : ''
+                  activeKeys['a'] ? 'controller-button-active' : ''
                 }`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
@@ -182,7 +182,7 @@ export default function Home() {
                 onMouseDown={() => handleButtonPress('z')}
                 onMouseUp={() => handleButtonRelease('z')}
               >
-                B
+                A
               </div>
               <div
                 className={`controller-button ${
@@ -191,11 +191,54 @@ export default function Home() {
                 onMouseDown={() => handleButtonPress('x')}
                 onMouseUp={() => handleButtonRelease('x')}
               >
-                A
+                B
               </div>
             </div>
           </div>
         </div>
+        <table id="keymapping">
+                <caption>Button Mapping</caption>
+                <thead>
+                  <tr>
+                    <th>Emulator Key</th>
+                    <th>Keyboard Key</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Up Arrow</td>
+                    <td>&uarr;</td>
+                  </tr>
+                  <tr>
+                    <td>Left Arrow</td>
+                    <td>&larr;</td>
+                  </tr>
+                  <tr>
+                    <td>Right Arrow</td>
+                    <td>&rarr;</td>
+                  </tr>
+                  <tr>
+                    <td>Down Arrow</td>
+                    <td>&darr;</td>
+                  </tr>
+                  <tr>
+                    <td>A button</td>
+                    <td>Z</td>
+                  </tr>
+                  <tr>
+                    <td>B button</td>
+                    <td>X</td>
+                  </tr>
+                  <tr>
+                    <td>Y button</td>
+                    <td>S</td>
+                  </tr>
+                  <tr>
+                    <td>X button</td>
+                    <td>A</td>
+                  </tr>
+                </tbody>
+        </table>
       </div>
     </main>
   );
