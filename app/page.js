@@ -89,11 +89,11 @@ export default function Home() {
         </button>
       </div>
 
-      <div className="flex flex-col h-full w-full items-center mt-20">
-        <div className="relative w-full xl:max-w-4xl mb-10">
+      <div className="flex flex-col h-full w-full items-center mt-20" style={{ minWidth: '900px', maxWidth: '900px' }}>
+        <div className="relative w-full xl:max-w-4xl mb-10" style={{ minHeight: '400px' }}>
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
-            <div className="absolute inset-8	w-10/12" style={{ left: '6%', top: '10%' }}>
+            <div className="absolute inset-8 w-10/12" style={{ left: '6%', top: '10%' }}>
               <img src="/images/animated-tv-static.gif" className="object-fill h-auto w-5/6 z-0" />
             </div>
           </div>
@@ -124,11 +124,10 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="controller flex justify-between w-full mt-10">
-          <div className="controller-buttons-left flex flex-col items-center">
+        <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
+          <div className="controller-buttons-left flex flex-col items-center" >
             <div
-              className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''
-                }`}
+              className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''}`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
               onMouseUp={() => handleButtonRelease('ArrowUp')}
             >
@@ -136,24 +135,21 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['ArrowLeft'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowLeft'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowLeft')}
                 onMouseUp={() => handleButtonRelease('ArrowLeft')}
               >
                 ←
               </div>
               <div
-                className={`controller-button ${activeKeys['ArrowDown'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowDown'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowDown')}
                 onMouseUp={() => handleButtonRelease('ArrowDown')}
               >
                 ↓
               </div>
               <div
-                className={`controller-button ${activeKeys['ArrowRight'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['ArrowRight'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('ArrowRight')}
                 onMouseUp={() => handleButtonRelease('ArrowRight')}
               >
@@ -161,19 +157,18 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['az'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
               >
                 X
               </div>
               <div
-                className={`controller-button ${activeKeys['s'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['s'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('s')}
                 onMouseUp={() => handleButtonRelease('s')}
               >
@@ -182,70 +177,24 @@ export default function Home() {
             </div>
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['z'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['z'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('z')}
                 onMouseUp={() => handleButtonRelease('z')}
               >
-                A
+                B
               </div>
               <div
-                className={`controller-button ${activeKeys['x'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['x'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('x')}
                 onMouseUp={() => handleButtonRelease('x')}
               >
-                B
+                A
               </div>
             </div>
           </div>
         </div>
 
-        <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
-          <table>
-            <thead>
-              <tr>
-                <th className="px-5">Emulator Key</th>
-                <th className="px-5">Keyboard Key</th>
-              </tr>
-            </thead>
-            <tbody className="mt-5">
-              <tr>
-                <td className="px-5">Up Arrow</td>
-                <td className="px-5">&uarr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Left Arrow</td>
-                <td className="px-5">&larr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Right Arrow</td>
-                <td className="px-5">&rarr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Down Arrow</td>
-                <td className="px-5">&darr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">A button</td>
-                <td className="px-5">Z</td>
-              </tr>
-              <tr>
-                <td className="px-5">B button</td>
-                <td className="px-5">X</td>
-              </tr>
-              <tr>
-                <td className="px-5">Y button</td>
-                <td className="px-5">S</td>
-              </tr>
-              <tr>
-                <td className="px-5">X button</td>
-                <td className="px-5">A</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-    </main>
+    </main >
   );
 }
