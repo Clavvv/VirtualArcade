@@ -155,7 +155,7 @@ const Home = (props) => {
             </div>
           </div>
 
-          <div className="absolute flex justify-center items-center z-10" style={{ left: '5%', bottom: '9%' }}>
+          <div className="absolute flex justify-center items-center z-10" style={{ left: '5%', bottom: '11%' }}>
             {rom && (
               <EmulatorJS
                 EJS_core={emulatorMap[activeEmulator]}
