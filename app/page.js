@@ -15,6 +15,7 @@ export default function Home() {
   const [activeEmulator, setActiveEmulator] = useState(emulatorArray[0]);
   const [activeKeys, setActiveKeys] = useState({});
   const [fileError, setFileError] = useState("");
+  const [iframeRef, setIframeRef] = useState(null);
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -44,11 +45,13 @@ export default function Home() {
   };
 
   const handleKeyDown = (e) => {
-    setActiveKeys((prevKeys) => ({ ...prevKeys, [e.key]: true }));
+    const key= e.key || e.data.key
+    setActiveKeys((prevKeys) => ({ ...prevKeys, [key]: true }));
   };
 
   const handleKeyUp = (e) => {
-    setActiveKeys((prevKeys) => ({ ...prevKeys, [e.key]: false }));
+    const key= e.key || e.data.key
+    setActiveKeys((prevKeys) => ({ ...prevKeys, [key]: false }));
   };
 
   useEffect(() => {
@@ -69,6 +72,48 @@ export default function Home() {
     setActiveKeys((prevKeys) => ({ ...prevKeys, [key]: false }));
   };
 
+  useEffect(() => {
+
+    const findIframe = () => {
+        const iframe = document.querySelector("iframe");
+        if (iframe) {
+            setIframeRef(iframe);
+        }
+
+    };
+
+    findIframe();
+  }, [rom])
+
+  useEffect(() => {
+
+    const handleIframeInput = (e) => {
+
+      console.log("WE ARE IN HANDLE IFRAME INPUT!!")
+
+      if (e.origin !== new URL(iframeRef.src).origin){
+        return;
+      }
+
+      const { type, key}= e.data
+
+      if (type === 'keydown') {
+        handleKeyDown({key})
+
+    } else if (type === 'keyup') {
+        handleKeyUp({key})
+      }
+  }
+
+  window.addEventListener('message', handleIframeInput)
+
+  return () => {
+    window.removeEventListener('message', handleIframeInput)
+  }
+  }, [iframeRef])
+
+
+
   return (
     <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon" style={{ minWidth: '1700px' }}>
       <div className="flex flex-row items-center">
@@ -78,7 +123,7 @@ export default function Home() {
         >
           &lt;
         </button>
-        <span className="text-center text-neon-pink text-4xl font-bold min-w-[250px]">
+        <span className="text-center text-neon-pink text-4xl font-bold min-w-[351px]">
           {activeEmulator}
         </span>
         <button
@@ -127,8 +172,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
-          <div className="controller-buttons-left flex flex-col items-center" >
+        <div className="controller flex justify-between w-full mt-48">
+          <div className="controller-buttons-left flex flex-col items-center">
             <div
               className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''}`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
@@ -198,7 +243,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
+        <div className="keymappings absolute top-0 left-0 h-96 w-48 m-10 space-y-2">
           <table>
             <thead>
               <tr>
@@ -252,5 +297,5 @@ export default function Home() {
         </div>
       </div>
     </main >
-  );
+  )
 }
