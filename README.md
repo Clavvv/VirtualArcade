@@ -38,6 +38,8 @@ To use this app, follow these steps:
 
 ## Tech Stack
 - [React.js](https://react.dev/)
+- [Express.js](https://expressjs.com/)
+- [Node.js](https://nodejs.org/en)
 - [TailwindCSS](https://tailwindcss.com/)
 - [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
 - [React EmulatorJS](https://github.com/dimitrikarpov/react-emulatorjs)
