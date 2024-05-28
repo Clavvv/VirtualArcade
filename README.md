@@ -1,3 +1,6 @@
+![image](https://github.com/Clavvv/VirtualArcade/assets/140454605/21892ca1-f38a-430d-afd2-ad7ca0a2e7ae)
+
+
 # GameBeav
 
 GameBeav is a web-based Nintendo console emulator, intended to revive the nostalgia of playing the countless games on Nintendo handheld consoles from the 90s and 2000s. This emulator was written in JavaScript and Typescript, and supports Game Boy (.gb), Game Boy Advance (.gba), and Nintendo DS (.nds) ROMs. 
