@@ -134,7 +134,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col h-full w-full items-center mt-20" style={{ minWidth: '900px', maxWidth: '900px' }}>
-        <div className="relative w-full xl:max-w-4xl mb-10" style={{ minHeight: '400px' }}>
+        <div className="relative w-full xl:max-w-4xl mb-10" style={{ minHeight: '600px' }}>
           <div className="relative w-full h-full">
             <img src="/images/tv.png" className="block w-full h-auto" />
             <div className="absolute w-10/12" style={{ left: '6%', top: '10%' }}>
@@ -166,9 +166,6 @@ export default function Home() {
           <button className="cyber-button active:bg-slate-600" onClick={handleButtonClick}>
             Load ROM
           </button>
-          <div className="instructions absolute bg-zinc-900/[0.95] p-5 m-44 rounded-md border-2 border-[#00ff99] text-lg" style={{ bottom: '150px', minWidth: '900px', color: '#00ff99' }}>
-            This emulator supports .gb, .gba, and .nds ROM files. Please use the selector at the top of the page to choose your preferred emulator. Enjoy!
-          </div>
         </div>
 
         <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
