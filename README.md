@@ -44,6 +44,7 @@ To use this app, follow these steps:
 - [Express.js](https://expressjs.com/)
 - [Node.js](https://nodejs.org/en)
 - [TailwindCSS](https://tailwindcss.com/)
+- [Clerk](https://clerk.com/)
 - [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
 - [React EmulatorJS](https://github.com/dimitrikarpov/react-emulatorjs)
 
