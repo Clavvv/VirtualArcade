@@ -7,7 +7,8 @@ GameBeav is a web-based Nintendo console emulator, intended to revive the nostal
 ## Tech Stack
 - [React.js](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
-- 
+- [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
+- [React EmulatorJS](https://github.com/dimitrikarpov/react-emulatorjs)
 
 ## Contributors
 - [Ryan Clavin](https://github.com/Clavvv)
