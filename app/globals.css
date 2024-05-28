@@ -38,6 +38,7 @@ body {
   .text-neon-pink {
     @apply text-pink-600;
     text-shadow: 0 0 2px #ff00ff, 0 0 2px #ff00ff, 0 0 3px #ff00ff;
+    font-family: 'Courier New', Courier, monospace;
   }
   .bg-neon {
     @apply bg-gray-900;
@@ -122,5 +123,10 @@ body {
 
   .keymappings tr:hover {
     background-color: rgba(245, 245, 245, 0.15);
+  }
+
+  .instructions {
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 1000px;
   }
 }
