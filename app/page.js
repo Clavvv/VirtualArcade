@@ -45,12 +45,12 @@ export default function Home() {
   };
 
   const handleKeyDown = (e) => {
-    const key= e.key || e.data.key
+    const key = e.key || e.data.key
     setActiveKeys((prevKeys) => ({ ...prevKeys, [key]: true }));
   };
 
   const handleKeyUp = (e) => {
-    const key= e.key || e.data.key
+    const key = e.key || e.data.key
     setActiveKeys((prevKeys) => ({ ...prevKeys, [key]: false }));
   };
 
@@ -75,10 +75,10 @@ export default function Home() {
   useEffect(() => {
 
     const findIframe = () => {
-        const iframe = document.querySelector("iframe");
-        if (iframe) {
-            setIframeRef(iframe);
-        }
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        setIframeRef(iframe);
+      }
 
     };
 
@@ -91,27 +91,26 @@ export default function Home() {
 
       console.log("WE ARE IN HANDLE IFRAME INPUT!!")
 
-      if (e.origin !== new URL(iframeRef.src).origin){
+      if (e.origin !== new URL(iframeRef.src).origin) {
         return;
       }
 
-      const { type, key}= e.data
+      const { type, key } = e.data
 
       if (type === 'keydown') {
-        handleKeyDown({key})
+        handleKeyDown({ key })
 
-    } else if (type === 'keyup') {
-        handleKeyUp({key})
+      } else if (type === 'keyup') {
+        handleKeyUp({ key })
       }
-  }
+    }
 
-  window.addEventListener('message', handleIframeInput)
+    window.addEventListener('message', handleIframeInput)
 
-  return () => {
-    window.removeEventListener('message', handleIframeInput)
-  }
+    return () => {
+      window.removeEventListener('message', handleIframeInput)
+    }
   }, [iframeRef])
-
 
 
   return (
@@ -123,7 +122,7 @@ export default function Home() {
         >
           &lt;
         </button>
-        <span className="text-center text-neon-pink text-4xl font-bold min-w-[351px]">
+        <span className="text-center text-neon-pink text-4xl font-bold min-w-[250px]">
           {activeEmulator}
         </span>
         <button
@@ -172,8 +171,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="controller flex justify-between w-full mt-48">
-          <div className="controller-buttons-left flex flex-col items-center">
+        <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
+          <div className="controller-buttons-left flex flex-col items-center" >
             <div
               className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''}`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
@@ -243,7 +242,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="keymappings absolute top-0 left-0 h-96 w-48 m-10 space-y-2">
+        <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
           <table>
             <thead>
               <tr>
@@ -297,5 +296,5 @@ export default function Home() {
         </div>
       </div>
     </main >
-  )
+  );
 }
