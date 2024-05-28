@@ -4,6 +4,28 @@ GameBeav is a web-based Nintendo console emulator, intended to revive the nostal
 
 > This project is a submission to the "retro" themed [Spring 2024 BeaverHacks](https://spring-2024-retro.devpost.com/) hackathon, hosted by Oregon State University.
 
+
+## How to use
+To use this app, follow these steps:
+
+1. **Clone the Git Repository**
+
+   ```git clone "https://github.com/Clavvv/VirtualArcade"```
+
+2. **Build and run the code**
+
+    ```npm build```
+
+    ```npm start```
+
+3. **Open the app**
+  
+    Navigate to `localhost:3000`
+
+4. **Upload your favorite game's files**
+
+5. **Enjoy!**
+
 ## Tech Stack
 - [React.js](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
