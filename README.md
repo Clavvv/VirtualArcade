@@ -22,9 +22,19 @@ To use this app, follow these steps:
   
     Navigate to `localhost:3000`
 
-4. **Upload your favorite game's files**
+4. **Select the appropriate console at the top of the page**
 
-5. **Enjoy!**
+5. **Upload your favorite game's files**
+
+    Download ROMs here (safe & tested!):
+
+    - [Game Boy](https://vimm.net/vault/GB)
+
+    - [Game Boy Advance](https://vimm.net/vault/GBA)
+
+    - [Nintendo DS](https://vimm.net/vault/DS)
+
+6. **Enjoy!**
 
 ## Tech Stack
 - [React.js](https://react.dev/)
