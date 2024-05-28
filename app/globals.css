@@ -17,7 +17,6 @@
 }
 
 body {
-
   main {
     background-image: url("/images/background.jpg");
   }
@@ -32,25 +31,31 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
   .cyber-button {
     @apply font-mono text-green-400 bg-gray-900 border-2 border-green-400 rounded-md p-2 transition-all duration-200 ease-in-out transform hover:text-pink-600 hover:border-pink-600 hover:shadow-neon;
   }
+
   .text-neon-pink {
     @apply text-pink-600;
     text-shadow: 0 0 2px #ff00ff, 0 0 2px #ff00ff, 0 0 3px #ff00ff;
     font-family: 'Courier New', Courier, monospace;
   }
+
   .bg-neon {
     @apply bg-gray-900;
   }
+
   .shadow-neon {
     @apply shadow-lg;
     box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
   }
+
   .text-neon-green {
     @apply text-green-400;
     text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99;
   }
+
   .controller {
     display: flex;
     align-items: center;
@@ -98,8 +103,6 @@ body {
     box-shadow: 0 2px #666; 
   }
 
-
-
   .keymappings {
     font-family: 'Courier New', Courier, monospace;
     color: #00ff99;
@@ -109,6 +112,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     width: 300px;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 50;
   }
 
   .keymappings th,
@@ -129,4 +136,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     max-width: 1000px;
   }
+
+  .retro-button {
+    @apply font-mono text-green-400 bg-gray-900 border-2 border-green-400 rounded-md p-2 transition-all duration-200 ease-in-out transform hover:text-pink-600 hover:border-pink-600 hover:shadow-neon;
+    
+  }
+  
 }

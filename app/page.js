@@ -15,6 +15,7 @@ export default function Home() {
   const [activeEmulator, setActiveEmulator] = useState(emulatorArray[0]);
   const [activeKeys, setActiveKeys] = useState({});
   const [fileError, setFileError] = useState("");
+  const [showLegend, setShowLegend] = useState(false); // State for showing/hiding legend
   const [iframeRef, setIframeRef] = useState(null);
 
   const handleFileUpload = (e) => {
@@ -73,24 +74,18 @@ export default function Home() {
   };
 
   useEffect(() => {
-
     const findIframe = () => {
       const iframe = document.querySelector("iframe");
       if (iframe) {
         setIframeRef(iframe);
       }
-
     };
 
     findIframe();
   }, [rom])
 
   useEffect(() => {
-
     const handleIframeInput = (e) => {
-
-      console.log("WE ARE IN HANDLE IFRAME INPUT!!")
-
       if (e.origin !== new URL(iframeRef.src).origin) {
         return;
       }
@@ -99,7 +94,6 @@ export default function Home() {
 
       if (type === 'keydown') {
         handleKeyDown({ key })
-
       } else if (type === 'keyup') {
         handleKeyUp({ key })
       }
@@ -112,11 +106,10 @@ export default function Home() {
     }
   }, [iframeRef])
 
-
   return (
     <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon" style={{ minWidth: '1700px' }}>
-    <title>GameBeav</title>
-    <link rel="icon" type="image/png" href="/images/favicon.png" />
+      <title>GameBeav</title>
+      <link rel="icon" type="image/png" href="/images/favicon.png" />
       <div className="flex flex-row items-center">
         <button
           className="cyber-button mx-5 active:bg-slate-600"
@@ -171,7 +164,7 @@ export default function Home() {
         </div>
 
         <div className="controller flex w-full mt-10 mr-20" style={{ maxWidth: '1600px', minWidth: '1300px' }}>
-          <div className="controller-buttons-left flex flex-col items-center" >
+          <div className="controller-buttons-left flex flex-col items-center">
             <div
               className={`controller-button ${activeKeys['ArrowUp'] ? 'controller-button-active' : ''}`}
               onMouseDown={() => handleButtonPress('ArrowUp')}
@@ -207,8 +200,7 @@ export default function Home() {
           <div className="controller-buttons-right flex flex-col items-center">
             <div className="flex">
               <div
-                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''
-                  }`}
+                className={`controller-button ${activeKeys['a'] ? 'controller-button-active' : ''}`}
                 onMouseDown={() => handleButtonPress('a')}
                 onMouseUp={() => handleButtonRelease('a')}
               >
@@ -241,59 +233,67 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="keymappings absolute top-0 left-0 m-10 space-y-10">
-          <table>
-            <thead>
-              <tr>
-                <th className="px-5">Emulator Key</th>
-                <th className="px-5">Keyboard Key</th>
-              </tr>
-            </thead>
-            <tbody className="mt-5">
-              <tr>
-                <td className="px-5">Up Arrow</td>
-                <td className="px-5">&uarr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Left Arrow</td>
-                <td className="px-5">&larr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Right Arrow</td>
-                <td className="px-5">&rarr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">Down Arrow</td>
-                <td className="px-5">&darr;</td>
-              </tr>
-              <tr>
-                <td className="px-5">A button</td>
-                <td className="px-5">Z</td>
-              </tr>
-              <tr>
-                <td className="px-5">B button</td>
-                <td className="px-5">X</td>
-              </tr>
-              <tr>
-                <td className="px-5">Y button</td>
-                <td className="px-5">S</td>
-              </tr>
-              <tr>
-                <td className="px-5">X button</td>
-                <td className="px-5">A</td>
-              </tr>
-              <tr>
-                <td className="px-5">Start</td>
-                <td className="px-5">Enter</td>
-              </tr>
-              <tr>
-                <td className="px-5">Select</td>
-                <td className="px-5">V</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="absolute top-5 left-5 z-50" >
+          <button className="retro-button" onClick={() => setShowLegend(!showLegend)}>
+            {showLegend ? "Hide Key Mappings" : "Show Key Mappings"}
+          </button>
         </div>
+
+        {showLegend && (
+          <div className="keymappings mt-10">
+            <table>
+              <thead>
+                <tr>
+                  <th>Emulator Key</th>
+                  <th>Keyboard Key</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Up Arrow</td>
+                  <td>&uarr;</td>
+                </tr>
+                <tr>
+                  <td>Left Arrow</td>
+                  <td>&larr;</td>
+                </tr>
+                <tr>
+                  <td>Right Arrow</td>
+                  <td>&rarr;</td>
+                </tr>
+                <tr>
+                  <td>Down Arrow</td>
+                  <td>&darr;</td>
+                </tr>
+                <tr>
+                  <td>A button</td>
+                  <td>Z</td>
+                </tr>
+                <tr>
+                  <td>B button</td>
+                  <td>X</td>
+                </tr>
+                <tr>
+                  <td>Y button</td>
+                  <td>S</td>
+                </tr>
+                <tr>
+                  <td>X button</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>Start</td>
+                  <td>Enter</td>
+                </tr>
+                <tr>
+                  <td>Select</td>
+                  <td>V</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
-    </main >
+    </main>
   );
 }
