@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+![image](https://github.com/Clavvv/VirtualArcade/assets/140454605/21892ca1-f38a-430d-afd2-ad7ca0a2e7ae)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# GameBeav
 
-In the project directory, you can run:
+GameBeav is a web-based Nintendo console emulator, intended to revive the nostalgia of playing the countless games on Nintendo handheld consoles from the 90s and 2000s. This emulator was written in JavaScript and Typescript, and supports Game Boy (.gb), Game Boy Advance (.gba), and Nintendo DS (.nds) ROMs. 
 
-### `npm start`
+> This project is a submission to the "retro" themed [Spring 2024 BeaverHacks](https://spring-2024-retro.devpost.com/) hackathon, hosted by Oregon State University.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How to use
+To use this app, follow these steps:
 
-### `npm test`
+1. **Clone the Git Repository**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```git clone "https://github.com/Clavvv/VirtualArcade"```
 
-### `npm run build`
+2. **Build and run the code**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```npm build```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```npm start```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Open the app**
+  
+    Navigate to `localhost:3000`
 
-### `npm run eject`
+4. **Select the appropriate console at the top of the page**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **Upload your favorite game's files**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Download ROMs here (safe & tested!):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    - [Game Boy](https://vimm.net/vault/GB)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    - [Game Boy Advance](https://vimm.net/vault/GBA)
 
-## Learn More
+    - [Nintendo DS](https://vimm.net/vault/DS)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+6. **Enjoy!**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack
+- [React.js](https://react.dev/)
+- [Express.js](https://expressjs.com/)
+- [Node.js](https://nodejs.org/en)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Clerk](https://clerk.com/)
+- [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
+- [React EmulatorJS](https://github.com/dimitrikarpov/react-emulatorjs)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors
+- [Ryan Clavin](https://github.com/Clavvv)
+- [Andy Vo](https://github.com/prosperxo)
+- [Zhiwei Cai](https://github.com/zwcai0110)
+- [Brandon Pham](https://github.com/brandonpham13)
