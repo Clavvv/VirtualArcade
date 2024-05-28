@@ -15,9 +15,15 @@
     "react-emulatorjs": "^2.2.6"
   },
   "devDependencies": {
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "description": "2024 Spring Beaverhacks Project",
+  "main": "tailwind.config.js",
+  "author": "",
+  "license": "ISC"
 }
