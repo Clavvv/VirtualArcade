@@ -115,6 +115,8 @@ export default function Home() {
 
   return (
     <main className="flex h-screen flex-col items-center justify-between p-24 bg-neon" style={{ minWidth: '1700px' }}>
+    <title>GameBeav</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
       <div className="flex flex-row items-center">
         <button
           className="cyber-button mx-5 active:bg-slate-600"
