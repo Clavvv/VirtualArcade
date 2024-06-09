@@ -41,7 +41,6 @@ To use this app, follow these steps:
 
 ## Tech Stack
 - [React.js](https://react.dev/)
-- [Express.js](https://expressjs.com/)
 - [Node.js](https://nodejs.org/en)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Clerk](https://clerk.com/)
