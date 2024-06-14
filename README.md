@@ -46,6 +46,7 @@ To use this app, follow these steps:
 - [Clerk](https://clerk.com/)
 - [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS)
 - [React EmulatorJS](https://github.com/dimitrikarpov/react-emulatorjs)
+- [Typescript](https://www.typescriptlang.org/)
 
 ## Contributors
 - [Ryan Clavin](https://github.com/Clavvv)
